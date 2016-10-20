@@ -9,11 +9,14 @@
 #include <iostream>
 using namespace std;
 
-void showMenu();
-
 char choice = ' ';
-int order1;
-int orderAmount1;
+struct orderFormat
+{
+    int furnitureChoice;
+    int furnitureAmount;
+};
+
+void showMenu(orderFormat);
 
 int main() {
     
@@ -24,17 +27,18 @@ int main() {
     const float WARDROBE_PRICE = 172.72;
     const float CALL_OUT_FEE = 31.82;
     const float REMOVE_PACKAGE = 13.64;
-    int orderAmount1;
+    
+    orderFormat orderInput[99];
    
     
     cout << "Welcome to Install4U\n";
     
-            showMenu ();
+            showMenu (orderInput);
     
     return 0;
 }
 
-void showMenu()
+void showMenu(orderFormat)
 {
     
     do
@@ -47,10 +51,20 @@ void showMenu()
     cout << "4. TV Bench \n";
     cout << "5. 2-frame Wardrobe with Hinged Doors \n";
     cout << "Order: ";
-    cin >> order1;
+        
+        for (int i = 0; i<1; i++)
+        {
+            cin >> orderInput[i].furnitureChoice;
+            while (orderInput[i].furnitureChoice < 1 || orderInput[i].furnitureChoice > 5)
+            {
+                cout << "Please enter a number between 1-5" << endl;
+                cout << "Order: ";
+                cin >> orderInput[i].funitureChoice;
+            }
     
-    cout << "How much of this would you like to install?\n";
-    cin >> orderAmount1;
+            cout << "How much of this would you like to install?\n";
+            cin >> orderInput[i].furnitureAmount;
+        }
     
     cout << "Would you like to add more items to your cart? (Y/N) \n";
     cin >> choice;
