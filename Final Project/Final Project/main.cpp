@@ -16,7 +16,11 @@ struct orderFormat
     int furnitureAmount;
 };
 
-void showMenu(orderFormat);
+void showMenu();
+
+int number = 0;
+
+
 
 int main() {
     
@@ -28,18 +32,23 @@ int main() {
     const float CALL_OUT_FEE = 31.82;
     const float REMOVE_PACKAGE = 13.64;
     
-    orderFormat orderInput[99];
+    orderFormat orderInput[number];
    
     
     cout << "Welcome to Install4U\n";
     
-            showMenu (orderInput);
+            showMenu();
+    
+    cout << orderInput[0].furnitureChoice << endl;
+    cout << orderInput[0].furnitureAmount << endl;
+    cout << orderInput[1].furnitureChoice << endl;
     
     return 0;
 }
 
-void showMenu(orderFormat)
+void showMenu()
 {
+    orderFormat orderInput[number];
     
     do
     {
@@ -50,16 +59,21 @@ void showMenu(orderFormat)
     cout << "3. Bed without Under Storage \n";
     cout << "4. TV Bench \n";
     cout << "5. 2-frame Wardrobe with Hinged Doors \n";
+    cout << "6. I do not want to book an installation right now\n";
     cout << "Order: ";
         
-        for (int i = 0; i<1; i++)
+        for (int i = 0; i<=number; i++)
         {
             cin >> orderInput[i].furnitureChoice;
             while (orderInput[i].furnitureChoice < 1 || orderInput[i].furnitureChoice > 5)
             {
                 cout << "Please enter a number between 1-5" << endl;
                 cout << "Order: ";
-                cin >> orderInput[i].funitureChoice;
+                cin >> orderInput[i].furnitureChoice;
+            }
+            if (orderInput[i].furnitureChoice == 6)
+            {
+                break;
             }
     
             cout << "How much of this would you like to install?\n";
@@ -70,4 +84,5 @@ void showMenu(orderFormat)
     cin >> choice;
     }
     while (choice == 'Y' || choice == 'y');
+    number++;
 }
