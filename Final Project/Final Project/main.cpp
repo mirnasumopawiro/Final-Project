@@ -7,6 +7,7 @@
 //  Installation Booking
 
 #include <iostream>
+#include <iomanip>
 #include "Orders.hpp"
 using namespace std;
 
@@ -18,16 +19,22 @@ void showMenu();
 
 int main()
 {
-    
-    
-    Orders orderInput (fChoice, fAmount);
-    
-    cout << "Welcome to Install4U\n";
+    cout << "\t\t\t WELCOME TO INSTALL 4 U\n";
     
             showMenu();
     
-    cout << "Furniture number: " << orderInput.getChoice() << endl;
-    cout << "Amount to install: " << orderInput.getAmount() << endl;
+    Orders orderInput (fChoice, fAmount);
+    
+    cout << "\t\t\tORDER SUMMARY:" << endl;
+    cout << "Furniture number: " << setw(2) << fixed << orderInput.getChoice() << endl;
+    cout << "Amount to install: " << setw(2) << fixed << orderInput.getAmount() << endl;
+    
+    orderInput.setSubTotal(fChoice, fAmount);
+    
+    cout << setprecision(2);
+    cout << "TOTAL QUOTE: " << setw(2) << fixed << "$" << orderInput.getSubTotal() << endl;
+    cout << "Would you like to proceed?\n";
+    
     
     
     return 0;
@@ -35,7 +42,6 @@ int main()
 
 void showMenu()
 {
-    
 
     cout << "Which furniture would you like us to install for you? (ex: for Bookcase, enter 1)\n";
     cout << "1. Bookcase \n";
@@ -62,6 +68,5 @@ void showMenu()
     
             cout << "How much of this would you like to install?\n";
             cin >> fAmount;
-    
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA28B4B1DC9787A00A71543 /* CustomerData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BA28B491DC9787A00A71543 /* CustomerData.cpp */; };
 		4BA88F6D1DC34BB700A7E5ED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA69121DAB8D9F00478345 /* main.cpp */; };
 		4BC3B7301DC8CD010073B589 /* Orders.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3B72E1DC8CD010073B589 /* Orders.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4BA28B491DC9787A00A71543 /* CustomerData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomerData.cpp; sourceTree = "<group>"; };
+		4BA28B4A1DC9787A00A71543 /* CustomerData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CustomerData.hpp; sourceTree = "<group>"; };
 		4BAA690F1DAB8D9E00478345 /* Final Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Final Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAA69121DAB8D9F00478345 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4BC3B72E1DC8CD010073B589 /* Orders.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Orders.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 				4BAA69121DAB8D9F00478345 /* main.cpp */,
 				4BC3B72E1DC8CD010073B589 /* Orders.cpp */,
 				4BC3B72F1DC8CD010073B589 /* Orders.hpp */,
+				4BA28B491DC9787A00A71543 /* CustomerData.cpp */,
+				4BA28B4A1DC9787A00A71543 /* CustomerData.hpp */,
 			);
 			path = "Final Project";
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA28B4B1DC9787A00A71543 /* CustomerData.cpp in Sources */,
 				4BC3B7301DC8CD010073B589 /* Orders.cpp in Sources */,
 				4BA88F6D1DC34BB700A7E5ED /* main.cpp in Sources */,
 			);

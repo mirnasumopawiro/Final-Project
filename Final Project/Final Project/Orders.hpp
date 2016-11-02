@@ -24,14 +24,17 @@ private:
     const float REMOVE_PACKAGE = 13.64;
     int furnitureChoice;
     int furnitureAmount;
+    float subTotal;
     
 public:
     Orders();
     Orders (int furnitureChoice, int furnitureAmount);
-    void setChoice();
-    void setAmount();
     int getChoice();
     int getAmount();
+    void setSubTotal(int furnitureChoice, int furnitureAmount);
+    float getSubTotal();
+    
+    
 };
 
 #endif /* Orders_hpp */
