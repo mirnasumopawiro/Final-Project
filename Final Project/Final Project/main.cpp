@@ -12,12 +12,14 @@
 #include "CustomerData.hpp"
 using namespace std;
 
-int fChoice;
-int fAmount;
-string inName;
-string inNumber;
-string inCity;
-char choice;
+int fChoice; //input furniture choice
+int fAmount; //input furniture amount
+string inName; //input name
+string inNumber; //input phone number
+string inCity; //input city
+char choice; //input choice
+
+//function prototypes
 void showMenu();
 void getData();
 void showSummary();
@@ -30,7 +32,7 @@ int main()
     
     try
     {
-        showMenu();
+        showMenu(); //calling Show Menu function to display menu and accept orders
     }
     catch (string exceptionString)
     {
@@ -38,7 +40,7 @@ int main()
         exit (0);
     }
     
-    Orders orderInput (fChoice, fAmount);
+    Orders orderInput (fChoice, fAmount); //creating an object from Orders class
     
     cout << "\t\t\tORDER SUMMARY:" << endl;
     cout << "Furniture number: " << setw(2) << fixed << orderInput.getChoice() << endl;
@@ -54,7 +56,7 @@ int main()
     
     if (choice == 'Y' || choice == 'y')
     {
-        getData();
+        getData(); //calls Get Data function to accept customer's details
     }
     else
     {
@@ -63,10 +65,10 @@ int main()
         exit(0);
     }
     
-    CustomerData customerDetails (inName, inNumber, inCity);
+    CustomerData customerDetails (inName, inNumber, inCity); //creating an object from CustomerData class
     
    
-    showSummary();
+    showSummary(); //displays the summary of the order
     
     cout << "Would you like to book your installation now?" << endl;
     cin >> choice;
@@ -85,7 +87,13 @@ int main()
     
     return 0;
 }
+//End of program
 
+
+
+//FUNCTION DEFINITIONS
+
+//1. Show Menu function
 void showMenu()
 {
 
@@ -102,7 +110,7 @@ void showMenu()
         
             if (fChoice < 1 || fChoice > 6)
             {
-                cout << "Please enter a number between 1-5" << endl;
+                cout << "Please enter a number between 1-6" << endl;
                 cout << "Order: ";
                 cin >> fChoice;
             }
@@ -116,12 +124,13 @@ void showMenu()
             cin >> fAmount;
 }
 
+//2. Get Data function
 void getData ()
 {
     do
     {
         cout << "Please enter the following details\n";
-        cout << "Name: ";
+        cout << "First name: ";
         cin >> inName;
         cout << "Phone number: ";
         cin >> inNumber;
@@ -139,6 +148,7 @@ void getData ()
     
 }
 
+//3. Show Summary function
 void showSummary()
 {
     CustomerData customerDetails (inName, inNumber, inCity);

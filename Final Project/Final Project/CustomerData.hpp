@@ -12,6 +12,7 @@
 #include <iostream>
 using namespace std;
 
+//CustomerData class
 class CustomerData
 {
 private:
@@ -19,7 +20,9 @@ private:
     string number;
     string city;
 public:
+    //Constructor
     CustomerData (string name, string number, string city);
+    //Accessors
     string getName();
     string getNumber();
     string getCity();
