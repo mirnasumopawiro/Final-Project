@@ -21,10 +21,10 @@ private:
     const float TV_BENCH_PRICE = 86.36;
     const float WARDROBE_PRICE = 172.72;
     const float CALL_OUT_FEE = 31.82;
-    const float REMOVE_PACKAGE = 13.64;
     int furnitureChoice;
     int furnitureAmount;
     float subTotal;
+    float grandTotal;
     
 public:
     Orders();
@@ -33,6 +33,9 @@ public:
     int getAmount();
     void setSubTotal(int furnitureChoice, int furnitureAmount);
     float getSubTotal();
+    float getCallOutFee();
+    void setGrandTotal();
+    float getGrandTotal();
     
     
 };

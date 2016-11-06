@@ -19,7 +19,10 @@ private:
     string number;
     string city;
 public:
-    CustomerData (int );
+    CustomerData (string name, string number, string city);
+    string getName();
+    string getNumber();
+    string getCity();
 };
 
 #endif /* CustomerData_hpp */

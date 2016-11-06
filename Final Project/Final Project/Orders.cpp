@@ -49,3 +49,18 @@ float Orders::getSubTotal()
 {
     return subTotal;
 }
+
+float Orders::getCallOutFee()
+{
+    return CALL_OUT_FEE;
+}
+
+void Orders::setGrandTotal()
+{
+    grandTotal = subTotal + CALL_OUT_FEE;
+}
+
+float Orders::getGrandTotal()
+{
+    return grandTotal;
+}
